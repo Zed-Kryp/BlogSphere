@@ -1,0 +1,505 @@
+/* auth.css - Modern Redesign */
+/* Using variables from main styles.css for consistency */
+/* :root {
+  --primary-color: #4361ee;
+  --primary-light: #e0e7ff;
+  --success-color: #2ecc71;
+  --danger-color: #e74c3c;
+  --warning-color: #f39c12;
+  --gray-color: #95a5a6;
+  --light-gray: #ecf0f1;
+  --dark-gray: #34495e;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+} */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-secondary); /* Use global font variable */
+  background-color: var(--light-gray); /* Use global light-gray */
+  color: var(--dark-color); /* Use global dark-color */
+  min-height: 100vh;
+}
+
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.auth-container {
+  background-color: white;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-width: 1100px;
+  width: 100%;
+  flex-direction: row;
+  transition: var(--transition);
+  /* Animations handled by script.js now */
+  /* animation: fadeIn 0.5s ease; */
+}
+
+/* @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+.auth-branding,
+.auth-form-container {
+  flex: 1;
+  padding: 4rem 3rem;
+}
+
+.auth-branding {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #3a0ca3 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-branding::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: rotate(30deg);
+}
+
+.auth-branding .logo {
+  font-family: var(--font-primary); /* Use global font variable */
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-branding h1 {
+  font-family: var(--font-primary); /* Use global font variable */
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-branding p {
+  font-family: var(--font-secondary); /* Use global font variable */
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+  max-width: 80%;
+}
+
+.auth-branding img {
+  max-width: 80%;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+}
+
+.auth-form-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.auth-form-header h2 {
+  font-family: var(--font-primary); /* Use global font variable */
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark-color); /* Use global dark-color */
+}
+
+.auth-form-header p {
+  color: var(--gray-color);
+  font-size: 0.9rem;
+}
+
+.auth-form-header a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--dark-color); /* Use global dark-color */
+  font-weight: 500;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon input {
+  width: 100%;
+  padding: 0.75rem 1rem; /* Adjusted padding for consistency with main styles */
+  padding-left: 2.5rem; /* Space for icon */
+  border: 1px solid var(--light-gray); /* Use global light-gray */
+  border-radius: var(--radius-sm); /* Use global radius-sm */
+  font-size: 0.95rem;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  box-sizing: border-box;
+}
+
+.input-with-icon .show-password-checkbox {
+  position: absolute;
+  right: 0.75rem; /* Adjusted for consistency */
+  top: 50%;
+  transform: translateY(-50%);
+  margin-bottom: 0; /* Remove default margin */
+  padding-left: 25px; /* Adjust padding for checkbox */
+  font-size: 0.85rem; /* Smaller font size for checkbox label */
+  color: var(--gray-color);
+}
+
+.input-with-icon .show-password-checkbox .checkmark {
+  height: 18px;
+  width: 18px;
+}
+
+.input-with-icon .show-password-checkbox .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+}
+
+.input-with-icon input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2); /* Use rgba for primary-color with transparency */
+}
+
+.input-with-icon i {
+  position: absolute;
+  left: 0.75rem; /* Adjusted for consistency */
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-color);
+  font-size: 1rem;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 0.75rem; /* Adjusted for consistency */
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-color);
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 2;
+}
+
+.password-toggle:hover {
+  color: var(--dark-gray);
+}
+
+.error-message {
+  color: var(--error-color); /* Use global error-color */
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.error-message.show {
+  display: block;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  border-radius: var(--radius-sm); /* Use global radius-sm */
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  font-weight: 600; /* Use global font-weight */
+  margin-top: 1rem;
+}
+
+.btn:hover {
+  background-color: var(--primary-dark); /* Use global primary-dark */
+  transform: translateY(-2px); /* Consistent with global btn hover */
+  box-shadow: var(--shadow-md);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.btn-loader {
+  display: none;
+  margin-left: 0.5rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btn.loading .btn-text {
+  display: none;
+}
+
+.btn.loading .btn-loader {
+  display: inline-block;
+}
+
+.password-strength {
+  margin-top: 0.5rem;
+}
+
+.strength-meter {
+  height: 6px;
+  background-color: var(--light-gray);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 0.25rem;
+  display: flex;
+  gap: 2px;
+}
+
+.strength-bar {
+  height: 100%;
+  flex: 1;
+  background-color: var(--gray-color); /* Use global gray-color */
+  transition: var(--transition);
+}
+
+.strength-text {
+  font-size: 0.75rem;
+  color: var(--gray-color);
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+  user-select: none;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border: 1px solid var(--light-gray); /* Use global light-gray */
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #f1f1f1;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  color: var(--gray-color);
+  font-size: 0.8rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--light-gray); /* Use global light-gray */
+}
+
+.auth-divider::before {
+  margin-right: 1rem;
+}
+
+.auth-divider::after {
+  margin-left: 1rem;
+}
+
+.social-auth {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-social {
+  flex: 1;
+  background-color: white;
+  color: var(--dark-color); /* Use global dark-color */
+  border: 1px solid var(--light-gray); /* Use global light-gray */
+}
+
+.btn-social:hover {
+  background-color: #f9f9f9;
+}
+
+.btn-social i {
+  margin-right: 0.5rem;
+}
+
+.auth-footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--gray-color);
+  margin-top: 2rem;
+}
+
+.auth-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.password-reset-instructions {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+}
+
+.password-reset-instructions h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--dark-color); /* Use global dark-color */
+}
+
+.password-reset-instructions ul {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.password-reset-instructions li {
+  margin-bottom: 0.3rem;
+}
+
+.password-reset-instructions small {
+  opacity: 0.7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+    max-width: 500px;
+  }
+
+  .auth-branding {
+    padding: 2rem;
+  }
+
+  .auth-branding img {
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-page {
+    padding: 1rem;
+  }
+
+  .auth-branding,
+  .auth-form-container {
+    padding: 1.5rem;
+  }
+
+  .social-auth {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlogSphere - Contact</title>
+    <meta
+      name="description"
+      content="Contact BlogSphere for inquiries and feedback."
+    />
+
+    <!-- Typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400;600&family=Fira+Code&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/frontend/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/frontend/images/apple-touch-icon.png" />
+  </head>
+  <body>
+    <!-- ======= Header ======= -->
+    <header class="sticky-header">
+      <div class="container">
+        <a href="/index.html" class="logo">BlogSphere</a>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/pages/categories.html">Categories</a></li>
+            <li><a href="/pages/about.html">About</a></li>
+            <li><a href="/pages/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions" id="headerActions">
+          <!-- When NOT logged in -->
+          <div class="auth-buttons">
+            <a href="/auth/login.html" class="btn btn-outline">Log In</a>
+            <a href="/auth/register.html" class="btn btn-primary">Sign Up</a>
+          </div>
+
+          <!-- When logged in -->
+          <div class="user-menu" style="display: none">
+            <img
+              src="https://images.pexels.com/photos/3771069/pexels-photo-3771069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              alt="Avatar"
+              class="user-avatar"
+            />
+            <span class="user-name"
+              >Hi, <strong id="userName">User</strong></span
+            >
+            <button class="btn-logout" onclick="logout()" aria-label="Logout">
+              <i class="fas fa-sign-out-alt"></i>
+            </button>
+          </div>
+
+          <button class="mobile-menu-btn" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section contact-hero">
+        <div class="hero-overlay">
+          <div class="container text-center">
+            <h1 class="hero-title animate-fade-in">Contact Us: Let's Talk!</h1>
+            <p class="hero-subtitle animate-fade-in-up">
+              We're All Ears (and Keyboard Smashes) 👂⌨️
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="main-content py-5">
+        <div class="container">
+          <div class="contact-intro text-center animate-fade-in-up">
+            <p>
+              Got a killer feature idea? Found a sneaky bug? Just want to say
+              "hey, cool thing you're building"? We’re here for it all. This
+              isn’t a corporate black hole—your message goes straight to humans
+              building with you.
+            </p>
+            <p class="lead">Pick Your Vibe:</p>
+          </div>
+
+          <div class="row contact-options-grid">
+            <div class="col-md-6 col-lg-3 animate-fade-in-left">
+              <div class="contact-card">
+                <i class="fas fa-lightbulb icon-large"></i>
+                <h3>💡 Idea Factory</h3>
+                <p>
+                  “What if we could…?” Pitch features, rage about UX, or suggest
+                  improvements. We geek out over this stuff.
+                </p>
+                <a href="#" class="btn btn-outline contact-btn"
+                  >→ Submit Suggestion</a
+                >
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 animate-fade-in-up">
+              <div class="contact-card">
+                <i class="fas fa-bug icon-large"></i>
+                <h3>🐞 Bug Busters</h3>
+                <p>
+                  “Help! My post turned into a potato!” 🥔 Spotted something
+                  weird? Tell us where, when, and how dramatic it felt.
+                </p>
+                <a href="#" class="btn btn-outline contact-btn"
+                  >→ Report a Glitch</a
+                >
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 animate-fade-in-down">
+              <div class="contact-card">
+                <i class="fas fa-envelope icon-large"></i>
+                <h3>✨ General Magic</h3>
+                <p>Partnerships, press, or just sharing vibes?</p>
+                <a href="#" class="btn btn-outline contact-btn"
+                  >→ Send a Note</a
+                >
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 animate-fade-in-right">
+              <div class="contact-card urgent-card">
+                <i class="fas fa-fire icon-large"></i>
+                <h3>🔥 Urgent Support</h3>
+                <p>
+                  “My account’s on fire!” 🔥 Locked out? Safety concern? We
+                  prioritize these.
+                </p>
+                <a href="#" class="btn btn-primary contact-btn"
+                  >→ Emergency Help</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="what-happens-next text-center animate-fade-in-up">
+            <h2>What Happens Next?</h2>
+            <ul class="checklist">
+              <li>
+                <i class="fas fa-check-circle"></i> ⏱️ We reply within 48 hours
+                (usually faster!).
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> ❤️ No bots. Real humans.
+                Real answers.
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> 🌱 Your feedback directly
+                shapes BLOGSPHER’s future.
+              </li>
+            </ul>
+          </div>
+
+          <div class="social-contact text-center animate-fade-in-up">
+            <h2>Prefer Social?</h2>
+            <p>Slide into our DMs:</p>
+            <div class="social-links-contact">
+              <a
+                href="https://twitter.com/blogsphere"
+                target="_blank"
+                aria-label="Twitter"
+                ><i class="fab fa-twitter"></i> @blogsphere</a
+              >
+              <a
+                href="https://instagram.com/blogsphere"
+                target="_blank"
+                aria-label="Instagram"
+                ><i class="fab fa-instagram"></i> blogsphere</a
+              >
+              <a
+                href="https://linkedin.com/company/blogsphere"
+                target="_blank"
+                aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i> blogsphere</a
+              >
+            </div>
+            <p class="mt-4">
+              Building simple spaces for real talk—that includes talking to us.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======= Footer ======= -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- About -->
+          <div class="footer-about">
+            <h3>BlogSphere</h3>
+            <p>
+              Sharing ideas that matter through thoughtful writing and community
+              engagement.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/pages/about.html">About Us</a></li>
+              <li><a href="/pages/contact.html">Contact</a></li>
+              <li><a href="/pages/privacy.html">Privacy Policy</a></li>
+              <li><a href="/pages/terms.html">Terms of Service</a></li>
+            </ul>
+          </div>
+
+          <!-- Categories -->
+          <div class="footer-categories">
+            <h4>Categories</h4>
+            <ul>
+              <li><a href="/pages/category.html">Technology</a></li>
+              <li><a href="/pages/category.html">Design</a></li>
+              <li><a href="/pages/category.html">Business</a></li>
+              <li><a href="/pages/category.html">Lifestyle</a></li>
+              <li><a href="/pages/category.html">Travel</a></li>
+              <li><a href="/pages/category.html">Health</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-newsletter">
+            <h4>Newsletter</h4>
+            <p>Subscribe to get updates on new posts</p>
+            <form class="footer-newsletter-form">
+              <input type="email" placeholder="Your email" required />
+              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2023 BlogSphere. All rights reserved.</p>
+          <div class="footer-lang">
+            <span>Language:</span>
+            <a href="#" class="active">English</a>
+            <a href="#">Español</a>
+            <a href="#">Français</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="/script.js"></script>
+    <script>
+      updateHeader(); // Call the function from script.js
+    </script>
+  </body>
+</html>

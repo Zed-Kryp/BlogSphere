@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlogSphere - Discover & Share Amazing Stories</title>
+  <meta name="description"
+    content="Join our community of passionate writers and curious readers. Explore thought-provoking articles across technology, design, business and more." />
+
+  <!-- Typography -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400;600&family=Fira+Code&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header class="sticky-header">
+    <div class="container">
+      <a href="index.html" class="logo">BlogSphere</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/categories.html">Categories</a></li>
+          <li><a href="pages/about.html">About Us</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+          <li><a href="post/create-post.html">Create Post</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions" id="headerActions">
+        <button class="search-btn" aria-label="Search">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="search-overlay">
+    <div class="container">
+      <form class="search-form">
+        <input
+          type="text"
+          placeholder="Search articles, authors, topics..."
+          class="search-input"
+        />
+        <button type="submit" class="search-submit">
+          <i class="fas fa-search"></i>
+        </button>
+        <button type="button" class="search-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ======= Hero Section ======= -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to BlogSphere</h1>
+      <p>Discover and share your stories with the world.</p>
+      <a href="post/create-post.html" class="btn btn-primary">Get Started</a>
+    </div>
+  </section>
+
+  <!-- ======= Featured Posts ======= -->
+  <section class="featured-posts" id="featured">
+  </section>
+
+  <!-- ======= Trending Topics ======= -->
+  <section class="trending-topics">
+  </section>
+
+  <!-- ======= Main Content Area ======= -->
+  <main class="main-content">
+    <div class="container content-grid">
+      <!-- ======= Posts Column ======= -->
+      <section class="posts-column">
+        <!-- ======= Blog Posts Section ======= -->
+        <section class="blog-posts">
+          <div class="container">
+            <h2 class="section-title">Latest Blog Posts</h2>
+            <div class="blog-grid" id="blogPosts">
+            </div>
+            <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+              <i class="fas fa-spinner fa-spin"></i> Loading more posts...
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- ======= Sidebar ======= -->
+      <aside class="sidebar">
+
+        <!-- Newsletter Widget -->
+        <div class="sidebar-widget newsletter-widget">
+          <h3>Stay Updated</h3>
+          <p>Get the latest posts delivered to your inbox</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" required />
+            <button type="submit" class="btn btn-primary btn-block">
+              Subscribe
+            </button>
+          </form>
+          <p class="privacy-note">
+            We respect your privacy. Unsubscribe at any time.
+          </p>
+        </div>
+
+        <!-- Categories Widget -->
+        <div class="sidebar-widget categories-widget">
+          <h3>Categories</h3>
+          <ul id="categoriesList">
+            <!-- Categories will be dynamically loaded here -->
+          </ul>
+        </div>
+
+        <!-- Popular Tags Widget -->
+        <div class="sidebar-widget popular-widget">
+          <h3>Popular Tags</h3>
+          <div class="tag-cloud">
+            <a href="pages/tag.html" class="tag">#webdev</a>
+            <a href="pages/tag.html" class="tag">#javascript</a>
+            <a href="pages/tag.html" class="tag">#ux</a>
+            <a href="pages/tag.html" class="tag">#productivity</a>
+            <a href="pages/tag.html" class="tag">#startup</a>
+            <a href="pages/tag.html" class="tag">#react</a>
+            <a href="pages/tag.html" class="tag">#python</a>
+            <a href="pages/tag.html" class="tag">#mindfulness</a>
+          </div>
+        </aside>
+      </div>
+
+    </main>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+      updateHeader(); // Call the function from script.js
+    </script>
+  </body>
+</html>

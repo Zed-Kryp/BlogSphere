@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard - BlogSphere</title>
+    <meta
+      name="description"
+      content="Manage your BlogSphere profile, posts, and bookmarks."
+    />
+
+    <!-- Typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400;600&family=Fira+Code&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Styles -->
+    <!-- Global styles -->
+    <link rel="stylesheet" href="../styles.css" />
+    <!-- Dashboard specific styles - moved after global styles for higher specificity -->
+    <link rel="stylesheet" href="dashboard.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/frontend/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/frontend/images/apple-touch-icon.png" />
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header class="sticky-header">
+      <div class="container">
+        <a href="/" class="logo">BlogSphere</a>
+        <!-- Main navigation from index.html is removed as dashboard has its own sidebar nav -->
+        <div class="header-actions" id="headerActions">
+          <!-- User actions will be dynamically loaded here by updateHeader() -->
+          <button class="search-btn" aria-label="Search">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+
+        <button class="mobile-menu-btn" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+    <!-- Global script -->
+    <script>
+      updateHeader(); // Call the function from script.js
+    </script>
+    <script src="dashboard.js"></script>
+    <!-- Dashboard specific script -->
+    <script>
+      setupScrollAnimations(); // Ensure animations are set up
+    </script>
+  </body>
+</html>
+    <div class="search-overlay">
+      <div class="container">
+        <form class="search-form">
+          <input
+            type="text"
+            placeholder="Search articles, authors, topics..."
+            class="search-input"
+          />
+          <button type="submit" class="search-submit">
+            <i class="fas fa-search"></i>
+          </button>
+          <button type="button" class="search-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <main class="dashboard-main">
+      <div class="dashboard-container animate-fade-in">
+        <aside class="dashboard-sidebar instagram-sidebar animate-fade-in-left">
+          <nav class="sidebar-nav">
+            <ul>
+              <li>
+                <button class="sidebar-btn active animate-fade-in-up" data-section="profile">
+                  <i class="fas fa-user"></i> Profile
+                </button>
+              </li>
+              <li>
+                <button class="sidebar-btn animate-fade-in-up" data-section="posts" style="animation-delay: 0.2s;">
+                  <i class="fas fa-file-alt"></i> My Posts
+                </button>
+              </li>
+              <li>
+                <button class="sidebar-btn animate-fade-in-up" data-section="bookmarks" style="animation-delay: 0.4s;">
+                  <i class="fas fa-bookmark"></i> Bookmarks
+                </button>
+              </li>
+              <li>
+                <button class="sidebar-btn animate-fade-in-up" id="sidebar-logout-btn" style="animation-delay: 0.6s;">
+                  <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+
+        <section class="dashboard-content animate-fade-in-right">
+          <section id="profile" class="dashboard-section active">
+            <div class="instagram-profile-header animate-fade-in-up">
+              <div class="profile-avatar-container animate-pop-in">
+                <img
+                  id="profilePictureDisplay"
+                  src="https://images.pexels.com/photos/3771069/pexels-photo-3771069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                  alt="Profile Picture"
+                  class="profile-picture-large"
+                />
+              </div>
+              <div class="profile-info-main profile-details-container">
+                <!-- Added new class -->
+                <div class="profile-username-actions animate-fade-in-up">
+                  <h2 id="profileUsernameDisplay">@username</h2>
+                  <button id="edit-profile-btn" class="btn btn-secondary animate-pop-in" style="animation-delay: 0.2s;">
+                    Edit Profile
+                  </button>
+                  <button class="btn btn-outline animate-pop-in" style="animation-delay: 0.4s;">View Archive</button>
+                </div>
+                <div class="profile-stats-instagram animate-fade-in-up" style="animation-delay: 0.6s;">
+                  <div class="stat-item">
+                    <span class="stat-number" id="postsCount">0</span>
+                    <span class="stat-label">posts</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-number" id="followersCount">0</span>
+                    <span class="stat-label">followers</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-number" id="followingCount">0</span>
+                    <span class="stat-label">following</span>
+                  </div>
+                </div>
+                <div class="profile-name-bio animate-fade-in-up" style="animation-delay: 0.8s;">
+                  <p class="profile-name-display" id="profileNameDisplay">
+                    Full Name
+                  </p>
+                  <p class="profile-bio-display" id="profileBioDisplay">
+                    Bio goes here.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Moved profile-about-me outside instagram-profile-header -->
+            <div class="profile-about-me animate-fade-in-up" style="animation-delay: 1s;">
+              <h3>About Me</h3>
+              <div class="profile-info-grid">
+                <p>
+                  <strong>Gender:</strong>
+                  <span id="profileGenderDisplay">N/A</span>
+                </p>
+                <p>
+                  <strong>Age:</strong> <span id="profileAgeDisplay">N/A</span>
+                </p>
+                <p>
+                  <strong>Date of Birth:</strong>
+                  <span id="profileDobDisplay">N/A</span>
+                </p>
+                <p>
+                  <strong>Phone:</strong>
+                  <span id="profilePhoneNumberDisplay">N/A</span>
+                </p>
+                <p>
+                  <strong>Education:</strong>
+                  <span id="profileEducationDisplay">N/A</span>
+                </p>
+                <p>
+                  <strong>Status:</strong>
+                  <span id="profileStatusDisplay">N/A</span>
+                </p>
+                <p>
+                  <strong>Address:</strong>
+                  <span id="profileAddressDisplay">N/A</span>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section
+            id="edit-profile-form"
+            class="dashboard-section animate-fade-in-up"
+            style="display: none"
+          >
+            <h2>Edit Profile</h2>
+            <form id="profile-form" class="modern-form">
+              <div class="form-group profile-picture-upload">
+                <label for="profilePictureUrl">Profile Picture:</label>
+                <div class="profile-picture-wrapper">
+                  <img
+                    id="profilePicturePreview"
+                    src=""
+                    alt="Profile Picture Preview"
+                    class="profile-picture-preview"
+                  />
+                  <input
+                    type="file"
+                    id="profilePictureUrl"
+                    name="profilePictureUrl"
+                    accept="image/*"
+                    class="file-input"
+                  />
+                  <label for="profilePictureUrl" class="custom-file-upload">
+                    <i class="fas fa-upload"></i> Choose File
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="username">Username:</label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  required
+                  disabled
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required disabled />
+              </div>
+
+              <div class="form-group">
+                <label for="bio">Bio:</label>
+                <textarea id="bio" name="bio"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                  <option value="">Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" />
+              </div>
+
+              <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" />
+              </div>
+
+              <div class="form-group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" />
+              </div>
+
+              <div class="form-group">
+                <label for="education">Education:</label>
+                <input type="text" id="education" name="education" />
+              </div>
+
+              <div class="form-group">
+                <label for="status">Status:</label>
+                <select id="status" name="status">
+                  <option value="">Select Status</option>
+                  <option value="Student">Student</option>
+                  <option value="Working">Working</option>
+                  <option value="Author">Author</option>
+                  <option value="Teacher">Teacher</option>
+                  <option value="Business">Business</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address"></textarea>
+              </div>
+
+              <div class="form-actions animate-fade-in-up">
+                <button type="submit" class="btn btn-primary animate-pop-in" style="animation-delay: 0.2s;">
+                  <i class="fas fa-save"></i> Save Changes
+                </button>
+                <button
+                  type="button"
+                  id="cancel-edit-btn"
+                  class="btn btn-outline animate-pop-in" style="animation-delay: 0.4s;"
+                >
+                  <i class="fas fa-times"></i> Cancel
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <section id="posts" class="dashboard-section animate-fade-in-up" style="display: none">
+            <h2>My Posts</h2>
+            <div id="user-posts" class="posts-grid">
+              <p>Loading posts...</p>
+              <!-- User's posts will be loaded here by JavaScript -->
+            </div>
+          </section>
+
+          <section
+            id="bookmarks"
+            class="dashboard-section animate-fade-in-up"
+            style="display: none"
+          >
+            <h2>My Bookmarks</h2>
+            <div id="bookmarked-posts" class="bookmarks-grid">
+              <p>Loading bookmarks...</p>
+              <!-- Bookmarked posts will be loaded here by JavaScript -->
+            </div>
+          </section>
+        </section>
+      </div>
+    </main>
+
+    <!-- ======= Footer ======= -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- About -->
+          <div class="footer-about">
+            <h3>BlogSphere</h3>
+            <p>
+              Sharing ideas that matter through thoughtful writing and community
+              engagement.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/pages/about.html">About Us</a></li>
+              <li><a href="/pages/contact.html">Contact</a></li>
+              <li><a href="/pages/privacy.html">Privacy Policy</a></li>
+              <li><a href="/pages/terms.html">Terms of Service</a></li>
+            </ul>
+          </div>
+
+          <!-- Categories -->
+          <div class="footer-categories">
+            <h4>Categories</h4>
+            <ul>
+              <li><a href="/pages/category.html">Technology</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-newsletter">
+            <h4>Newsletter</h4>
+            <p>Subscribe to get updates on new posts</p>
+            <form class="footer-newsletter-form">
+              <input type="email" placeholder="Your email" required />
+              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2023 BlogSphere. All rights reserved.</p>
+          <div class="footer-lang">
+            <span>Language:</span>
+            <a href="#" class="active">English</a>
+            <a href="#">Español</a>
+            <a href="#">Français</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+    <!-- Global script -->
+    <script src="dashboard.js"></script>
+    <!-- Dashboard specific script -->
+  </body>
+</html>

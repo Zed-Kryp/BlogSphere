@@ -1,0 +1,158 @@
+
+post api
+/
+
+/blog-posts
+GET
+OPTIONS
+POST
+     /{postId}
+        DELETE
+        GET
+        OPTIONS
+        PUT
+
+/categories
+GET
+OPTIONS
+POST
+      /{categoryId}
+        DELETE
+        GET
+        OPTIONS
+        PUT
+
+/post-bookmarks
+OPTIONS
+POST
+      /{userId}
+        OPTIONS
+           /{postId}
+            DELETE
+            OPTIONS
+
+/post-categories
+GET
+OPTIONS
+POST
+     /{postId}
+        OPTIONS
+         /{categoryId}
+            DELETE
+            GET
+            OPTIONS
+
+/post-comments
+GET
+OPTIONS
+POST
+      /{commentId}
+        DELETE
+        GET
+        OPTIONS
+        PUT
+
+/post-reactions
+GET
+OPTIONS
+POST
+     /{reactionId}
+        DELETE
+        GET
+        OPTIONS
+        PUT
+
+/post-shares
+GET
+OPTIONS
+POST
+     /{shareId}
+        DELETE
+        GET
+        OPTIONS
+        PUT
+
+/tags
+GET
+OPTIONS
+POST
+     /{tagId}
+        DELETE
+        GET
+        OPTIONS
+        PUT
+
+/upload-media
+OPTIONS
+POST
+
+/user-follows
+OPTIONS
+POST
+     /{followerId}
+        OPTIONS
+           /{followedId}
+            DELETE
+            OPTIONS
+
+/users
+OPTIONS
+       /{userId}
+        OPTIONS
+            /bookmarks
+            GET
+            OPTIONS
+           /followers
+            GET
+            OPTIONS
+          /following
+            GET
+            OPTIONS
+          /posts
+            GET
+            OPTIONS
+
+
+
+
+user api
+             /
+
+/forgot-password
+OPTIONS
+POST
+
+/login
+OPTIONS
+POST
+
+/profile
+OPTIONS
+    /{userId}
+    GET
+    OPTIONS
+    PUT
+    /upload-url
+    OPTIONS
+    POST
+
+/register
+OPTIONS
+POST
+
+/reset-password
+OPTIONS
+POST
+
+/users
+GET
+OPTIONS
+POST
+    /{userId}
+    DELETE
+    GET
+    OPTIONS
+    PUT
+        /posts
+        GET
+        OPTIONS

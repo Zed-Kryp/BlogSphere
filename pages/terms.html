@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlogSphere - Terms of Service</title>
+    <meta
+      name="description"
+      content="Read the terms of service of BlogSphere."
+    />
+
+    <!-- Typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400;600&family=Fira+Code&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/frontend/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/frontend/images/apple-touch-icon.png" />
+  </head>
+  <body>
+    <!-- ======= Header ======= -->
+    <header class="sticky-header">
+      <div class="container">
+        <a href="/index.html" class="logo">BlogSphere</a>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/pages/categories.html">Categories</a></li>
+            <li><a href="/pages/about.html">About</a></li>
+            <li><a href="/pages/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions" id="headerActions">
+          <!-- When NOT logged in -->
+          <div class="auth-buttons">
+            <a href="/auth/login.html" class="btn btn-outline">Log In</a>
+            <a href="/auth/register.html" class="btn btn-primary">Sign Up</a>
+          </div>
+
+          <!-- When logged in -->
+          <div class="user-menu" style="display: none">
+            <img
+              src="https://images.pexels.com/photos/3771069/pexels-photo-3771069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              alt="Avatar"
+              class="user-avatar"
+            />
+            <span class="user-name"
+              >Hi, <strong id="userName">User</strong></span
+            >
+            <button class="btn-logout" onclick="logout()" aria-label="Logout">
+              <i class="fas fa-sign-out-alt"></i>
+            </button>
+          </div>
+
+          <button class="mobile-menu-btn" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section policy-hero">
+        <div class="hero-overlay">
+          <div class="container text-center">
+            <h1 class="hero-title animate-fade-in">Terms of Service</h1>
+            <p class="hero-subtitle animate-fade-in-up">
+              Understanding our mutual agreement.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="main-content py-5">
+        <div class="container content-section">
+          <p class="animate-fade-in-up">
+            Welcome to BlogSphere! These Terms of Service ("Terms") govern your
+            use of our website and services. By accessing or using BlogSphere,
+            you agree to be bound by these Terms and our Privacy Policy. If you
+            do not agree to these Terms, please do not use our services.
+          </p>
+
+          <h2 class="animate-fade-in-up">1. Acceptance of Terms</h2>
+          <p class="animate-fade-in-up">
+            By creating an account or using any aspect of BlogSphere, you
+            signify your agreement to these Terms. We may modify these Terms at
+            any time, and such modifications will be effective immediately upon
+            posting the modified Terms on the Site. Your continued use of the
+            Site after such modifications constitutes your acknowledgment and
+            agreement to be bound by the modified Terms.
+          </p>
+
+          <h2 class="animate-fade-in-up">2. User Accounts</h2>
+          <p class="animate-fade-in-up">
+            To access certain features of BlogSphere, you may be required to
+            create an account. You agree to provide accurate, current, and
+            complete information during the registration process and to update
+            such information to keep it accurate, current, and complete. You are
+            responsible for safeguarding your password and for any activities or
+            actions under your password.
+          </p>
+
+          <h2 class="animate-fade-in-up">3. User Conduct</h2>
+          <p class="animate-fade-in-up">
+            You agree not to use BlogSphere for any unlawful purpose or in any
+            way that might harm, abuse, or otherwise interfere with the service
+            or any other user. Prohibited activities include, but are not
+            limited to:
+          </p>
+          <ul class="animate-fade-in-up">
+            <li>Posting illegal, offensive, or harmful content.</li>
+            <li>Engaging in harassment, bullying, or hate speech.</li>
+            <li>Distributing spam or malware.</li>
+            <li>Attempting to gain unauthorized access to our systems.</li>
+          </ul>
+
+          <h2 class="animate-fade-in-up">4. Content Ownership and License</h2>
+          <p class="animate-fade-in-up">
+            You retain ownership of any content you post on BlogSphere. By
+            posting content, you grant BlogSphere a worldwide, non-exclusive,
+            royalty-free license to use, reproduce, modify, publish, and
+            distribute your content on and through the service. This license is
+            for the purpose of operating, promoting, and improving the service.
+          </p>
+
+          <h2 class="animate-fade-in-up">5. Termination</h2>
+          <p class="animate-fade-in-up">
+            We may terminate or suspend your account and access to BlogSphere
+            immediately, without prior notice or liability, for any reason
+            whatsoever, including without limitation if you breach the Terms.
+          </p>
+
+          <h2 class="animate-fade-in-up">6. Disclaimer of Warranties</h2>
+          <p class="animate-fade-in-up">
+            BlogSphere is provided "as is" and "as available" without any
+            warranties of any kind, either express or implied, including, but
+            not limited to, implied warranties of merchantability, fitness for a
+            particular purpose, non-infringement, or course of performance.
+          </p>
+
+          <h2 class="animate-fade-in-up">7. Limitation of Liability</h2>
+          <p class="animate-fade-in-up">
+            In no event shall BlogSphere, nor its directors, employees,
+            partners, agents, suppliers, or affiliates, be liable for any
+            indirect, incidental, special, consequential or punitive damages,
+            including without limitation, loss of profits, data, use, goodwill,
+            or other intangible losses, resulting from (i) your access to or use
+            of or inability to access or use the Service; (ii) any conduct or
+            content of any third party on the Service; (iii) any content
+            obtained from the Service; and (iv) unauthorized access, use or
+            alteration of your transmissions or content, whether based on
+            warranty, contract, tort (including negligence) or any other legal
+            theory, whether or not we have been informed of the possibility of
+            such damage, and even if a remedy set forth herein is found to have
+            failed of its essential purpose.
+          </p>
+
+          <h2 class="animate-fade-in-up">8. Governing Law</h2>
+          <p class="animate-fade-in-up">
+            These Terms shall be governed and construed in accordance with the
+            laws of [Your Country/State], without regard to its conflict of law
+            provisions.
+          </p>
+
+          <h2 class="animate-fade-in-up">9. Contact Us</h2>
+          <p class="animate-fade-in-up">
+            If you have any questions about these Terms, please contact us at
+            [Your Email Address].
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======= Footer ======= -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- About -->
+          <div class="footer-about">
+            <h3>BlogSphere</h3>
+            <p>
+              Sharing ideas that matter through thoughtful writing and community
+              engagement.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/pages/about.html">About Us</a></li>
+              <li><a href="/pages/contact.html">Contact</a></li>
+              <li><a href="/pages/privacy.html">Privacy Policy</a></li>
+              <li><a href="/pages/terms.html">Terms of Service</a></li>
+            </ul>
+          </div>
+
+          <!-- Categories -->
+          <div class="footer-categories">
+            <h4>Categories</h4>
+            <ul>
+              <li><a href="/pages/category.html">Technology</a></li>
+              <li><a href="/pages/category.html">Design</a></li>
+              <li><a href="/pages/category.html">Business</a></li>
+              <li><a href="/pages/category.html">Lifestyle</a></li>
+              <li><a href="/pages/category.html">Travel</a></li>
+              <li><a href="/pages/category.html">Health</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-newsletter">
+            <h4>Newsletter</h4>
+            <p>Subscribe to get updates on new posts</p>
+            <form class="footer-newsletter-form">
+              <input type="email" placeholder="Your email" required />
+              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2023 BlogSphere. All rights reserved.</p>
+          <div class="footer-lang">
+            <span>Language:</span>
+            <a href="#" class="active">English</a>
+            <a href="#">Español</a>
+            <a href="#">Français</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="/script.js"></script>
+    <script>
+      updateHeader(); // Call the function from script.js
+    </script>
+  </body>
+</html>

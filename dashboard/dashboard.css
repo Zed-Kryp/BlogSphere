@@ -1,0 +1,683 @@
+/* General Body Styling */
+body {
+  font-family: var(--font-secondary); /* Use global font variable */
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-color); /* Use global light-color */
+  color: var(--dark-color); /* Use global dark-color */
+  line-height: 1.5;
+}
+
+/* Header and Navigation (from global styles.css, ensure consistency) */
+/* No specific header styling here, relies on ../styles.css */
+
+/* Main Content Area - Dashboard Layout */
+.dashboard-main {
+  display: block; /* Revert to block display */
+  min-height: calc(100vh - 120px); /* Adjust based on header/footer height */
+  max-width: 1000px; /* Increased max-width for a wider layout */
+  margin: 30px auto;
+  background-color: white;
+  border: 1px solid var(--light-gray); /* Use global light-gray */
+  border-radius: var(--radius-md); /* Use global radius-md */
+  box-shadow: var(--shadow-sm); /* Use global shadow-sm */
+  overflow: hidden; /* Keep overflow hidden for now */
+}
+
+/* Dashboard Container - This is the actual flex/grid parent */
+.dashboard-container {
+  display: grid !important; /* Changed to CSS Grid with !important */
+  grid-template-columns: 72px 1fr !important; /* Sidebar width and content takes remaining space with !important */
+  height: 100%; /* Ensure it takes full height of main */
+}
+
+/* Dashboard Sidebar */
+.dashboard-sidebar {
+  width: auto; /* Let grid control width */
+  background-color: white;
+  padding: 20px 0;
+  border-right: 1px solid var(--light-gray); /* Use global light-gray */
+  flex-shrink: 0; /* Ensure it doesn't shrink */
+  display: flex; /* Keep flex for internal items */
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Instagram Sidebar Specific Styling */
+.instagram-sidebar {
+  width: auto; /* Let grid control width */
+  background-color: white;
+  border-right: 1px solid var(--light-gray); /* Use global light-gray */
+  padding: 20px 0;
+  box-shadow: var(--shadow-sm); /* Use global shadow-sm */
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav ul li {
+  margin-bottom: 0;
+}
+
+.sidebar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content for narrow sidebar */
+  width: 100%;
+  padding: 14px 0; /* Reduced horizontal padding */
+  text-align: center; /* Center text for narrow sidebar */
+  background-color: transparent;
+  color: var(--dark-color); /* Use global dark-color */
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem; /* Smaller font for text */
+  font-weight: 500;
+  transition: var(--transition); /* Use global transition */
+  border-radius: 0;
+  flex-direction: column; /* Stack icon and text vertically */
+}
+
+.sidebar-btn i {
+  margin-right: 0; /* No margin for icon when stacked */
+  margin-bottom: 5px; /* Space between icon and text */
+  font-size: 1.5rem; /* Larger icon size */
+  color: var(--gray-color); /* Use global gray-color */
+}
+
+.sidebar-btn:hover {
+  background-color: var(--light-gray); /* Use global light-gray */
+  color: var(--dark-color); /* Use global dark-color */
+}
+
+.sidebar-btn.active {
+  color: var(--primary-color); /* Use global primary-color */
+  font-weight: 600;
+  border-left: 3px solid var(--primary-color); /* Use global primary-color */
+}
+
+.sidebar-btn.active i {
+  color: var(--primary-color); /* Use global primary-color */
+}
+
+/* Dashboard Content Area */
+.dashboard-content {
+  /* flex-grow: 1; Not strictly needed with grid, but harmless */
+  /* flex-basis: auto; Not strictly needed with grid, but harmless */
+  padding: 40px 60px;
+  background-color: var(--light-color); /* Use global light-color */
+}
+
+/* Dashboard Sections (within content area) */
+.dashboard-section {
+  margin-bottom: 40px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.dashboard-section h2 {
+  font-family: var(--font-primary); /* Use global font variable */
+  color: var(--dark-color); /* Use global dark-color */
+  margin-top: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+/* Hero Profile Section Styling (for pages/profile.html) */
+.hero-profile {
+  padding: 40px 60px; /* Match dashboard-content padding */
+  background-color: var(--light-color);
+}
+
+/* Instagram-like Profile Header Styling */
+.instagram-profile-header {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  padding-bottom: 44px;
+  margin-bottom: 44px;
+  border-bottom: 1px solid var(--light-gray); /* Use global light-gray */
+}
+
+.profile-avatar-container {
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  margin-right: 100px; /* Increased margin to match image */
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-gray); /* Use global light-gray */
+}
+
+.profile-picture-large {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-info-main {
+  flex-grow: 1;
+  padding-top: 10px; /* Adjust vertical alignment with avatar */
+}
+
+.profile-details-container {
+  /* New class for vertical stacking */
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-username-actions {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Increased margin */
+  gap: 10px; /* Space between elements */
+}
+
+.profile-username-actions h2 {
+  font-family: var(--font-secondary); /* Use global font variable */
+  font-size: 28px;
+  font-weight: 600; /* Made bold */
+  color: var(--dark-color); /* Use global dark-color */
+  margin: 0;
+  margin-right: 15px; /* Space between username and buttons */
+}
+
+.profile-username-actions .btn {
+  padding: 6px 16px; /* Adjusted padding */
+  font-size: 0.9rem; /* Slightly larger font */
+  font-weight: 600;
+  border-radius: var(--radius-sm); /* Use global radius-sm */
+  border: 1px solid var(--light-gray); /* Use global light-gray */
+  background-color: var(--light-gray); /* Use global light-gray */
+  color: var(--dark-color); /* Use global dark-color */
+}
+
+.profile-username-actions .btn-outline {
+  background-color: transparent; /* Ensure outline button is transparent */
+  color: var(--primary-color); /* Use global primary-color */
+  border-color: var(--primary-color); /* Use global primary-color */
+}
+
+.profile-username-actions .btn:hover {
+  background-color: var(--light-gray); /* Use global light-gray */
+  filter: brightness(0.95); /* Subtle hover effect */
+}
+
+.profile-stats-instagram {
+  display: flex;
+  margin-bottom: 20px; /* Increased margin */
+  gap: 40px; /* Space between stats items */
+}
+
+.stat-item {
+  font-size: 1rem;
+  color: var(--dark-color); /* Use global dark-color */
+  text-align: center; /* Center text for stats */
+  display: flex; /* Make stat-item a flex container */
+  flex-direction: column; /* Stack number and label vertically */
+  align-items: center; /* Center content horizontally */
+}
+
+.stat-number {
+  font-weight: 600;
+  display: block; /* Make number block for vertical stacking */
+  font-size: 1.1rem; /* Slightly larger number */
+}
+
+.stat-label {
+  color: var(--gray-color); /* Use global gray-color */
+  font-size: 0.9rem; /* Smaller label */
+}
+
+.profile-name-bio {
+  /* New container for name and bio */
+  margin-top: 10px; /* Space above name/bio */
+}
+
+.profile-name-display {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 8px; /* Adjusted margin */
+  color: var(--dark-color); /* Use global dark-color */
+}
+
+.profile-bio-display {
+  font-size: 1rem;
+  color: var(--dark-color); /* Use global dark-color */
+  margin-bottom: 0;
+  white-space: pre-wrap; /* Preserve line breaks in bio */
+}
+
+/* Profile About Me Section */
+.profile-about-me {
+  padding: 30px;
+  background-color: white;
+  border-radius: var(--radius-md); /* Use global radius-md */
+  box-shadow: var(--shadow-sm); /* Use global shadow-sm */
+  margin-top: 30px; /* Ensure space from the header */
+}
+
+.profile-about-me h3 {
+  font-family: var(--font-primary); /* Use global font variable */
+  color: var(--dark-color); /* Use global dark-color */
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--light-gray); /* Use global light-gray */
+  padding-bottom: 10px;
+}
+
+.profile-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px 30px;
+}
+
+.profile-info-grid p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  color: var(--gray-color); /* Use global gray-color */
+  display: flex;
+  align-items: center;
+}
+
+.profile-info-grid p strong {
+  color: var(--dark-color); /* Use global dark-color */
+  margin-right: 8px;
+  min-width: 90px; /* Align labels */
+}
+
+.profile-info-grid p span {
+  color: #555;
+  flex-grow: 1;
+}
+
+/* Modern Form Styling (for edit profile) */
+.modern-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 30px;
+  background-color: white;
+  border-radius: var(--radius-md); /* Use global radius-md */
+  box-shadow: var(--shadow-sm); /* Use global shadow-sm */
+}
+
+@media (min-width: 768px) {
+  .modern-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .modern-form .form-group.full-width {
+    grid-column: span 2;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .dashboard-container {
+    /* Apply grid to container */
+    grid-template-columns: 72px 1fr !important; /* Keep grid layout for tablets with !important */
+  }
+
+  .dashboard-main {
+    margin: 20px;
+    border: none;
+    box-shadow: none;
+  }
+
+  .dashboard-sidebar {
+    width: auto; /* Let grid control width */
+    padding: 20px 0; /* Keep original padding */
+    border-right: 1px solid var(--light-gray); /* Use global light-gray */
+    border-bottom: none; /* Remove bottom border */
+    margin-bottom: 0; /* Remove bottom margin */
+    flex-direction: column; /* Keep sidebar items stacked vertically */
+    justify-content: space-between;
+  }
+
+  .sidebar-nav ul {
+    display: block; /* Revert to block display for vertical list */
+    justify-content: initial;
+    flex-wrap: nowrap;
+  }
+
+  .sidebar-nav ul li {
+    margin-bottom: 0;
+  }
+
+  .sidebar-btn {
+    padding: 14px 0; /* Keep narrow padding */
+    text-align: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    flex-direction: column; /* Keep icon and text stacked */
+  }
+
+  .sidebar-btn i {
+    margin-right: 0;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  .sidebar-btn.active {
+    border-left: 3px solid var(--primary-color); /* Use global primary-color */
+    border-bottom: none; /* Remove bottom border highlight */
+  }
+
+  .dashboard-content {
+    padding: 20px;
+  }
+
+  .dashboard-section {
+    padding: 0; /* Remove section padding for mobile */
+    margin-bottom: 20px;
+  }
+
+  .instagram-profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .profile-avatar-container {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .profile-username-actions {
+    flex-direction: column;
+    margin-bottom: 15px;
+    gap: 5px; /* Adjusted gap for mobile */
+  }
+
+  .profile-username-actions h2 {
+    font-size: 24px; /* Smaller username on mobile */
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .profile-stats-instagram {
+    justify-content: center;
+    margin-bottom: 15px;
+    gap: 20px; /* Adjusted gap for mobile */
+  }
+
+  .stat-item {
+    margin: 0; /* Removed individual margin */
+  }
+
+  .profile-name-display,
+  .profile-bio-display {
+    text-align: center;
+  }
+
+  .modern-form {
+    padding: 20px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboard-container {
+    /* Apply grid to container */
+    grid-template-columns: 1fr !important; /* Stack sidebar and content on very small screens with !important */
+  }
+
+  .dashboard-main {
+    margin: 10px;
+  }
+
+  .dashboard-sidebar {
+    width: 100%; /* Sidebar takes full width on very small screens */
+    padding: 15px 0;
+    border-right: none;
+    border-bottom: 1px solid var(--light-gray); /* Separator for mobile */
+    border-radius: var(--radius-sm); /* Use global radius-sm */
+    margin-bottom: 20px;
+    flex-direction: row; /* Sidebar items horizontal on very small screens */
+    justify-content: space-around;
+  }
+
+  .sidebar-nav ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .sidebar-nav ul li {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  .sidebar-btn {
+    padding: 10px 15px;
+    text-align: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-direction: column; /* Keep icon and text stacked */
+  }
+
+  .sidebar-btn i {
+    margin-right: 0;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  .sidebar-btn.active {
+    border-left: none;
+    border-bottom: 2px solid var(--primary-color); /* Bottom border highlight for mobile */
+  }
+
+  .dashboard-content {
+    padding: 15px;
+  }
+
+  .dashboard-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .profile-picture-large {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-username-actions h2 {
+    font-size: 24px;
+  }
+
+  .profile-stats-instagram {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .stat-item {
+    margin: 5px 10px;
+  }
+
+  .modern-form {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .profile-picture-upload {
+    grid-column: span 1;
+  }
+}
+
+/* Container for posts/bookmarks */
+.posts-grid,
+.bookmarks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 25px;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .posts-grid,
+  .bookmarks-grid {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+}
+
+/* Post Card Styling */
+.post-card {
+  background-color: white;
+  border: 1px solid var(--light-gray); /* Use global light-gray */
+  border-radius: var(--radius-md); /* Use global radius-md */
+  box-shadow: var(--shadow-sm); /* Use global shadow-sm */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition); /* Use global transition */
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md); /* Use global shadow-md */
+}
+
+.post-card-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--light-gray); /* Use global light-gray */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-card-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-family: var(--font-primary); /* Use global font variable */
+  color: var(--dark-color); /* Use global dark-color */
+  flex-grow: 1;
+}
+
+.post-card-header h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-card-header h3 a:hover {
+  color: var(--primary-color); /* Use global primary-color */
+}
+
+.post-date,
+.post-author {
+  font-size: 0.85rem;
+  color: var(--gray-color); /* Use global gray-color */
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+.post-card-content {
+  padding: 15px 20px;
+  flex-grow: 1;
+}
+
+.post-card-content p {
+  font-size: 0.95rem;
+  color: var(--gray-color); /* Use global gray-color */
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.post-card-footer {
+  padding: 15px 20px;
+  border-top: 1px solid var(--light-gray); /* Use global light-gray */
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-color); /* Use global light-color */
+  gap: 10px; /* Add gap for wrapped items */
+}
+
+.post-stats span {
+  font-size: 0.9rem;
+  color: var(--gray-color); /* Use global gray-color */
+  margin-right: 15px;
+}
+
+.post-stats span i {
+  margin-right: 5px;
+  color: var(--primary-color); /* Use global primary-color */
+}
+
+.post-card-footer .btn {
+  padding: 8px 15px;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm); /* Use global radius-sm */
+  text-decoration: none;
+  transition: var(--transition); /* Use global transition */
+}
+
+.post-card-footer .btn-primary {
+  background-color: var(--primary-color); /* Use global primary-color */
+  color: white;
+  border: 1px solid var(--primary-color); /* Use global primary-color */
+}
+
+.post-card-footer .btn-primary:hover {
+  background-color: var(--primary-dark); /* Use global primary-dark */
+  border-color: var(--primary-dark); /* Use global primary-dark */
+}
+
+.post-card-footer .btn-outline {
+  background-color: transparent;
+  color: var(--primary-color); /* Use global primary-color */
+  border: 1px solid var(--primary-color); /* Use global primary-color */
+}
+
+.post-card-footer .btn-outline:hover {
+  background-color: var(--primary-color); /* Use global primary-color */
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .post-card-header {
+    padding: 10px 15px; /* Reduce padding */
+  }
+
+  .post-card-header h3 {
+    font-size: 1rem; /* Adjust title font size */
+  }
+
+  .post-card-content {
+    padding: 10px 15px; /* Reduce padding */
+  }
+
+  .post-card-content p {
+    font-size: 0.9rem; /* Adjust paragraph font size */
+  }
+
+  .post-card-footer {
+    padding: 10px 15px; /* Reduce padding */
+    gap: 5px; /* Further reduce gap */
+  }
+
+  .post-card-footer .btn {
+    padding: 6px 10px; /* Adjust button padding */
+    font-size: 0.8rem; /* Adjust button font size */
+  }
+}

@@ -1,0 +1,167 @@
+/* Profile Page Specific Post List Styles (aligned with Dashboard) */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 25px;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .posts-grid {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+}
+
+.post-card {
+  background-color: white;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.post-card .post-image {
+  width: 100%;
+  height: 200px; /* Fixed height for media container */
+  object-fit: cover;
+}
+
+.post-card-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--light-gray);
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: flex-start; /* Align items to the start */
+  gap: 10px; /* Space between stacked elements */
+}
+
+.post-author-info {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between avatar and name */
+  margin-bottom: 5px; /* Space below author info */
+}
+
+.post-author-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-author-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.post-author-name a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-author-name a:hover {
+  color: var(--primary-color);
+}
+
+.post-card-header h3 {
+  /* Changed from .post-card-header .post-title */
+  margin: 0;
+  font-size: 1.1rem;
+  font-family: var(--font-primary);
+  color: var(--dark-color);
+  flex-grow: 1;
+}
+
+.post-card-header h3 a {
+  /* Changed from .post-card-header .post-title a */
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-card-header h3 a:hover {
+  /* Changed from .post-card-header .post-title a:hover */
+  color: var(--primary-color);
+}
+
+.post-card-header .post-date {
+  /* Removed .post-author as it's now part of .post-author-info */
+  font-size: 0.85rem;
+  color: var(--gray-color);
+  white-space: nowrap;
+  margin-top: 5px; /* Space above date */
+}
+
+.post-card-content {
+  padding: 15px 20px;
+  flex-grow: 1;
+}
+
+.post-card-content p {
+  font-size: 0.95rem;
+  color: var(--gray-color);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.post-card-footer {
+  padding: 15px 20px;
+  border-top: 1px solid var(--light-gray);
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-color);
+  gap: 10px; /* Add gap for wrapped items */
+}
+
+.post-card-footer .post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.post-card-footer .tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--light-gray);
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  color: var(--gray-color);
+}
+
+.post-card-footer .tag:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .post-card-header {
+    padding: 10px 15px; /* Reduce padding */
+  }
+
+  .post-card-header h3 {
+    font-size: 1rem; /* Adjust title font size */
+  }
+
+  .post-card-content {
+    padding: 10px 15px; /* Reduce padding */
+  }
+
+  .post-card-content p {
+    font-size: 0.9rem; /* Adjust paragraph font size */
+  }
+
+  .post-card-footer {
+    padding: 10px 15px; /* Reduce padding */
+    gap: 5px; /* Further reduce gap */
+  }
+}

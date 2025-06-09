@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlogSphere - About</title>
+    <meta
+      name="description"
+      content="Learn more about BlogSphere and our mission."
+    />
+
+    <!-- Typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400;600&family=Fira+Code&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/frontend/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/frontend/images/apple-touch-icon.png" />
+    <link rel="stylesheet" href="/auth/auth.css" />
+  </head>
+  <body>
+    <!-- ======= Header ======= -->
+    <header class="sticky-header">
+      <div class="container">
+        <a href="/index.html" class="logo">BlogSphere</a>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/pages/categories.html">Categories</a></li>
+            <li><a href="/pages/about.html">About</a></li>
+            <li><a href="/pages/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions" id="headerActions">
+          <!-- When NOT logged in -->
+          <div class="auth-buttons">
+            <a href="/auth/login.html" class="btn btn-outline">Log In</a>
+            <a href="/auth/register.html" class="btn btn-primary">Sign Up</a>
+          </div>
+
+          <!-- When logged in -->
+          <div class="user-menu" style="display: none">
+            <img
+              src="https://images.pexels.com/photos/3771069/pexels-photo-3771069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              alt="Avatar"
+              class="user-avatar"
+            />
+            <span class="user-name"
+              >Hi, <strong id="userName">User</strong></span
+            >
+            <button class="btn-logout" onclick="logout()" aria-label="Logout">
+              <i class="fas fa-sign-out-alt"></i>
+            </button>
+          </div>
+
+          <button class="mobile-menu-btn" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section about-hero">
+        <div class="hero-overlay">
+          <div class="container text-center">
+            <h1 class="hero-title animate-fade-in">About BLOGSPHERE</h1>
+            <p class="hero-subtitle animate-fade-in-up">
+              Where Simple Sharing Sparks Connections
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="main-content py-5">
+        <div class="container">
+          <div class="about-intro animate-fade-in-up">
+            <p>
+              Welcome to BLOGSPHERE – your minimalist hub for authentic
+              expression. We’re building a clutter-free space where ideas flow
+              freely, conversations thrive, and connections grow organically. No
+              algorithms, no noise—just pure sharing.
+            </p>
+          </div>
+
+          <div class="row feature-section">
+            <div class="col-md-6 animate-fade-in-left">
+              <h3>✨ What You Can Do Today:</h3>
+              <ul class="feature-list">
+                <li>📝 Post text, photos, and videos</li>
+                <li>❤️ Like, comment, and bookmark posts</li>
+                <li>👥 Follow friends and discover creators</li>
+                <li>🔖 Save gems with our bookmark tool</li>
+              </ul>
+            </div>
+            <div class="col-md-6 animate-fade-in-right">
+              <img
+                src="/images/hero1.jpeg"
+                alt="People connecting"
+                class="img-fluid rounded shadow-sm"
+              />
+            </div>
+          </div>
+
+          <div class="row feature-section flex-md-row-reverse">
+            <div class="col-md-6 animate-fade-in-right">
+              <h3>🚀 Where We’re Headed:</h3>
+              <p>This is just the beginning. We’re actively crafting:</p>
+              <ul class="feature-list">
+                <li>Updated UI/UX</li>
+                <li>Advanced privacy controls</li>
+                <li>Interest-based communities</li>
+                <li>Enhanced media tools</li>
+                <li>Real-time notifications</li>
+              </ul>
+            </div>
+            <div class="col-md-6 animate-fade-in-left">
+              <img
+                src="/images/hero2.jpeg"
+                alt="Future features"
+                class="img-fluid rounded shadow-sm"
+              />
+            </div>
+          </div>
+
+          <div class="about-outro text-center animate-fade-in-up">
+            <p>
+              Born from a belief that social platforms should empower, not
+              overwhelm, we’re committed to evolving with you—not for eyeballs,
+              but for genuine human connection.
+            </p>
+            <p class="lead">
+              Join our early community. Share boldly. Grow with us.
+            </p>
+            <a
+              href="/auth/register.html"
+              class="btn btn-primary btn-lg mt-3 animate-pop-in"
+              >Join BlogSphere Today!</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======= Footer ======= -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- About -->
+          <div class="footer-about">
+            <h3>BlogSphere</h3>
+            <p>
+              Sharing ideas that matter through thoughtful writing and community
+              engagement.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/pages/about.html">About Us</a></li>
+              <li><a href="/pages/contact.html">Contact</a></li>
+              <li><a href="/pages/privacy.html">Privacy Policy</a></li>
+              <li><a href="/pages/terms.html">Terms of Service</a></li>
+            </ul>
+          </div>
+
+          <!-- Categories -->
+          <div class="footer-categories">
+            <h4>Categories</h4>
+            <ul>
+              <li><a href="/pages/category.html">Technology</a></li>
+              <li><a href="/pages/category.html">Design</a></li>
+              <li><a href="/pages/category.html">Business</a></li>
+              <li><a href="/pages/category.html">Lifestyle</a></li>
+              <li><a href="/pages/category.html">Travel</a></li>
+              <li><a href="/pages/category.html">Health</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-newsletter">
+            <h4>Newsletter</h4>
+            <p>Subscribe to get updates on new posts</p>
+            <form class="footer-newsletter-form">
+              <input type="email" placeholder="Your email" required />
+              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2023 BlogSphere. All rights reserved.</p>
+          <div class="footer-lang">
+            <span>Language:</span>
+            <a href="#" class="active">English</a>
+            <a href="#">Español</a>
+            <a href="#">Français</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="/script.js"></script>
+    <script>
+      updateHeader(); // Call the function from script.js
+    </script>
+  </body>
+</html>

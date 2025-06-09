@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found</title>
+    <meta
+      name="description"
+      content="Oops! The page you are looking for cannot be found."
+    />
+
+    <!-- Typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400;600&family=Fira+Code&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="https://images.pexels.com/photos/3771069/pexels-photo-3771069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      type="image/x-icon"
+    />
+    <link rel="apple-touch-icon" href="/frontend/images/apple-touch-icon.png" />
+  </head>
+  <body>
+    <main class="main-content full-height-center">
+      <div class="container text-center">
+        <h1 class="error-code animate-fade-in">404</h1>
+        <h2 class="error-message animate-fade-in-up">Page Not Found</h2>
+        <p class="error-description animate-fade-in-up">
+          Oops! The page you are looking for might have been removed, had its
+          name changed, or is temporarily unavailable.
+        </p>
+        <a href="/" class="btn btn-primary btn-lg mt-4 animate-pop-in"
+          >Go to Homepage</a
+        >
+      </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="/script.js"></script>
+    <script>
+      updateHeader(); // Call the function from script.js
+      setupScrollAnimations(); // Ensure animations are set up
+    </script>
+  </body>
+</html>

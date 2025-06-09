@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | BlogSphere</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400;600&family=Fira+Code&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/auth/auth.css" />
+  </head>
+  <body class="auth-page">
+    <div class="auth-container animate-fade-in">
+      <div class="auth-branding animate-fade-in-left">
+        <a href="/index.html" class="logo">BlogSphere</a>
+        <h1 class="animate-fade-in-up">Join our community today</h1>
+        <p class="animate-fade-in-up">
+          Create your account to start publishing your stories and connecting
+          with readers.
+        </p>
+        <img
+          src="/images/Aurora.png"
+          alt="Signup illustration"
+          class="auth-illustration animate-fade-in-up"
+        />
+      </div>
+
+      <div class="auth-form-container">
+        <div class="auth-form-header">
+          <h2>Create Account</h2>
+          <p>Already have an account? <a href="/auth/login.html">Log in</a></p>
+        </div>
+
+        <form id="registerForm" class="auth-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <div class="input-with-icon">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                required
+              />
+            </div>
+            <div class="error-message" id="name-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="username">Username</label>
+            <div class="input-with-icon">
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="yourusername"
+                required
+              />
+            </div>
+            <div class="error-message" id="username-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <div class="input-with-icon">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your@email.com"
+                required
+              />
+            </div>
+            <div class="error-message" id="email-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="input-with-icon">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="••••••••"
+                required
+              />
+              <label class="checkbox-container show-password-checkbox">
+                <input type="checkbox" id="showPassword" />
+                <span class="checkmark"></span>
+                Show Password
+              </label>
+            </div>
+            <div class="password-strength-meter" id="password-strength">
+              <div class="strength-bars">
+                <span class="strength-bar"></span>
+                <span class="strength-bar"></span>
+                <span class="strength-bar"></span>
+                <span class="strength-bar"></span>
+              </div>
+              <div class="strength-text"></div>
+            </div>
+            <div class="error-message" id="password-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <div class="input-with-icon">
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder="••••••••"
+                required
+              />
+              <label class="checkbox-container show-password-checkbox">
+                <input type="checkbox" id="showConfirmPassword" />
+                <span class="checkmark"></span>
+                Show Password
+              </label>
+            </div>
+            <div class="error-message" id="confirm-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-container">
+              <input type="checkbox" id="terms" name="terms" required />
+              <span class="checkmark"></span>
+              I agree to the
+              <a href="/pages/terms.html">Terms of Service</a> and
+              <a href="/pages/privacy.html">Privacy Policy</a>
+            </label>
+            <div class="error-message" id="terms-error"></div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary btn-block animate-pop-in"
+          >
+            <span class="btn-text">Create Account</span>
+            <i class="fas fa-spinner fa-spin btn-loader"></i>
+          </button>
+
+          <div class="auth-divider animate-fade-in">
+            <span>or sign up with</span>
+          </div>
+
+          <div class="social-auth animate-fade-in-up">
+            <button type="button" class="btn btn-outline btn-social">
+              <i class="fab fa-google"></i> Google
+            </button>
+            <button type="button" class="btn btn-outline btn-social">
+              <i class="fab fa-twitter"></i> Twitter
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="/script.js"></script>
+    <script src="/auth/auth.js"></script>
+    <script>
+      setupScrollAnimations(); // Ensure animations are set up
+    </script>
+  </body>
+</html>

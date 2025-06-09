@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create New Blog Post</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      #editor {
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="sticky-header">
+      <div class="container">
+        <a href="/index.html" class="logo">BlogSphere</a>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/pages/categories.html">Categories</a></li>
+            <li><a href="/pages/about.html">About Us</a></li>
+            <li><a href="/pages/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions" id="headerActions">
+          <button class="search-btn" aria-label="Search">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+
+        <button class="mobile-menu-btn" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+    <script src="/script.js"></script>
+    <script>
+      updateHeader(); // Call the function from script.js
+    </script>
+    <main>
+      <section class="create-post-section container">
+        <h1>Create New Blog Post</h1>
+        <form id="createPostForm">
+          <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required />
+          </div>
+          <div class="form-group">
+            <label for="content">Content:</label>
+            <div id="editor"></div>
+            <input type="hidden" id="content" name="content" required />
+          </div>
+          <div class="form-group">
+            <label for="categorySelect">Category:</label>
+            <select id="categorySelect" name="categoryId" required>
+              <option value="">Select a Category</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Create Post</button>
+        </form>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <div class="container">
+        <p>&copy; 2023 BlogSphere. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script type="module" src="/post/create-post.js"></script>
+  </body>
+</html>
